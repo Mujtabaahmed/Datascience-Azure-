@@ -64,7 +64,53 @@ We will be creating blob storage account in this step to store our unstructured 
 	\includegraphics{/Users/azureimages/5}
 \end{figure}
 7. Leave the remaining fields default and hit the pin to dashboard button \indent at the bottom of your screen. Finally click the \textbf{Create} button to create \indent the storage account.  
+\clearpage
 
+\section*{ii. Creating a container in that storage account}	
+In this step we will create a container (CloudBlobClient) in the storage account we created in the previous section. \par
+\vspace{0.5cm}
+1. Set a connection string to the Azure storage account. 
+\begin{figure}[H]
+	\centering
+	\includegraphics{/Users/azureimages/6}
+\end{figure}
+2. Create a container: Using \textbf{CloudBlobClient} we can get reference \indent objects for containers. You can create the container if it doesn't exist \indent with the \textbf{createIfNotExists} method, which will otherwise return the \indent existing container. 
+\begin{figure}[H]
+	\centering
+	\includegraphics{/Users/azureimages/7}
+\end{figure}
+\clearpage
 
+\section*{iii. Seeing what containers exist within the storage account}
+In order to list the containers, we can use \textbf{ListContainers()} to list all containers in one storage account, consider the java code:
+\begin{figure}[H]
+	\centering
+	\includegraphics{/Users/azureimages/8}
+\end{figure}
 	
+	
+\section*{iv. Uploading data to that container}	
+Now we have created a container, its time to upload data in it. Consider the code:
+\begin{figure}[H]
+	\centering
+	\includegraphics{/Users/azureimages/9}
+\end{figure}
+The above example will upload the data file into the data directory of \indent your container.
+
+\section*{v. Seeing items are inside of that container}
+To see the blobs in a container, we need to get reference of the container first like we did while uploading a blob. Using \textbf{listBlobs} method with a for loop, we can print the uri of each item in a container. Consider the java code:
+\begin{figure}[H]
+	\centering
+	\includegraphics{/Users/azureimages/10}
+\end{figure}
+ 		
+\cleardoublepage 		
+\section*{vi. Deleting an item in that container}
+In order to delete an item, get a reference of that item and call \textbf{deleteIfExists}.
+\begin{figure}[H]
+	\centering
+	\includegraphics{/Users/azureimages/11}
+\end{figure}
+ 		
+ 		
 \end{document}
